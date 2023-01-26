@@ -5,6 +5,7 @@ require "comp"
 require "ctr-char"
 
 vim.wo.number = true
+vim.opt.clipboard = "unnamedplus"
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
