@@ -1,3 +1,5 @@
 *
-!.*
+!.github
+!.config
+!.config/nvim
 
