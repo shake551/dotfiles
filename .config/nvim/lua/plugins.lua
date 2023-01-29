@@ -32,4 +32,6 @@ return require('packer').startup(function(use)
 	use 'gosukiwi/vim-atom-dark'
 
 	use 'akinsho/toggleterm.nvim'
+
+	use { "fatih/vim-go", opt = true, ft = { "go" } }
 end)
