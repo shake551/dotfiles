@@ -3,6 +3,7 @@ require "nvim_tree"
 require "lsp"
 require "comp"
 require "ctr-char"
+require "toggleterm"
 
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
