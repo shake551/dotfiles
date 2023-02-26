@@ -37,5 +37,7 @@ return require('packer').startup(function(use)
 	use 'akinsho/toggleterm.nvim'
 
 	use { "fatih/vim-go", ft = { "go" } }
+
+	use 'lewis6991/gitsigns.nvim'
 end)
 
