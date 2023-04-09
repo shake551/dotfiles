@@ -39,5 +39,10 @@ return require('packer').startup(function(use)
 	use { "fatih/vim-go", ft = { "go" } }
 
 	use 'lewis6991/gitsigns.nvim'
+
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 end)
 
