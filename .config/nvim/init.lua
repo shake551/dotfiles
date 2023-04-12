@@ -5,6 +5,7 @@ require "comp"
 require "ctr-char"
 require "toggleterm"
 require "git_status"
+require "status_line"
 
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
