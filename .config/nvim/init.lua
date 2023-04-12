@@ -7,6 +7,7 @@ require "toggleterm"
 require "git_status"
 require "status_line"
 require "ff"
+require "nvim_treesitter"
 
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
