@@ -9,6 +9,7 @@ require "status_line"
 require "ff"
 require "nvim_treesitter"
 require "indent"
+require "flutter"
 
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
