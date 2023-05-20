@@ -8,6 +8,7 @@ require "git_status"
 require "status_line"
 require "ff"
 require "nvim_treesitter"
+require "formatter"
 require "indent"
 require "flutter"
 
