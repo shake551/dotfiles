@@ -22,4 +22,3 @@ vim.opt.termguicolors = true
 vim.opt.pumblend = 20
 
 vim.cmd "colorschem atom-dark"
-
