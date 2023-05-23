@@ -11,6 +11,7 @@ require "nvim_treesitter"
 require "formatter"
 require "indent"
 require "flutter"
+require "octo_config"
 
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
