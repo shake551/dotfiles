@@ -170,7 +170,11 @@ ins_right {
 
 ins_right {'filetype', icons_enabled = true}
 
-ins_right {'branch', icon = '', color = {fg = colors.violet, gui = 'bold'}}
+ins_right {
+    'branch',
+    icons_enabled = true,
+    color = {fg = colors.violet, gui = 'bold'}
+}
 
 ins_right {
     'diff',
