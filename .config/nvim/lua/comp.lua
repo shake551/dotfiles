@@ -1,14 +1,28 @@
 local cmp = require 'cmp'
+local lspkind = require 'lspkind'
 
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        end
+    formatting = {
+        format = lspkind.cmp_format {
+            mode = 'symbol_text',
+            maxwidth = 100,
+            ellipsis_char = '…',
+            menu = {
+                buffer = 'buffer',
+                cmdline = 'cmdline',
+                emoji = 'emoji',
+                ghq = 'ghq',
+                nvim_lua = 'lua',
+                nvim_lsp = 'lsp',
+                nvim_lsp_signature_help = 'signature',
+                path = 'path',
+                vsnip = 'vsnip'
+            }
+        }
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered()
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -18,7 +32,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({select = true}) -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        {name = 'nvim_lsp'}, {name = 'luasnip'} -- For luasnip users.
+        {name = 'nvim_lsp'}, {name = 'luasnip'}, {name = 'git'}
     }, {{name = 'buffer'}})
 })
 
@@ -45,3 +59,5 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['gopls'].setup {capabilities = capabilities}
+
+require("cmp_git").setup()
