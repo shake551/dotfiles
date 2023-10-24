@@ -3,6 +3,15 @@ require("mason-lspconfig").setup()
 
 require'lspconfig'.lua_ls.setup {}
 require'lspconfig'.gopls.setup {}
+require'lspconfig'.marksman.setup {}
+require'lspconfig'.ltex.setup {}
+require'lspconfig'.pylsp.setup {}
+-- require'lspconfig'.denols.setup {
+--     root_dir = require'lspconfig'.util.root_pattern("deno.json", "deno.jsonc",
+--                                                     ".git")
+-- }
+require'lspconfig'.terraformls.setup {}
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {noremap = true, silent = true}
@@ -54,3 +63,4 @@ require('lspconfig')['rust_analyzer'].setup {
     -- Server-specific settings...
     settings = {["rust-analyzer"] = {}}
 }
+require('lspconfig')['phpactor'].setup {}
