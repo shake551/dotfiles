@@ -3,15 +3,8 @@ require("mason-lspconfig").setup()
 
 require'lspconfig'.lua_ls.setup {}
 require'lspconfig'.gopls.setup {}
-require'lspconfig'.marksman.setup {}
-require'lspconfig'.ltex.setup {}
-require'lspconfig'.pylsp.setup {}
--- require'lspconfig'.denols.setup {
---     root_dir = require'lspconfig'.util.root_pattern("deno.json", "deno.jsonc",
---                                                     ".git")
--- }
 require'lspconfig'.terraformls.setup {}
-
+require'lspconfig'.pylsp.setup {}
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {noremap = true, silent = true}
@@ -33,6 +26,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder,
@@ -43,7 +37,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>f',
                    function() vim.lsp.buf.format {async = true} end, bufopts)
 end
@@ -52,7 +45,7 @@ local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150
 }
-require('lspconfig')['pyright'].setup {on_attach = on_attach, flags = lsp_flags}
+--require('lspconfig')['pyright'].setup {on_attach = on_attach, flags = lsp_flags}
 require('lspconfig')['tsserver'].setup {
     on_attach = on_attach,
     flags = lsp_flags
@@ -63,4 +56,3 @@ require('lspconfig')['rust_analyzer'].setup {
     -- Server-specific settings...
     settings = {["rust-analyzer"] = {}}
 }
-require('lspconfig')['phpactor'].setup {}

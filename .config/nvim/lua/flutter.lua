@@ -1,9 +1,7 @@
 require("flutter-tools").setup {
-    decorations = {statusline = {app_version = true, device = true}},
+    decorations = {statusline = {device = false}},
     widget_guides = {enabled = true},
     outline = {open_cmd = "30vnew", auto_open = false},
-    lsp = {color = {enabled = true}}
-    -- debugger = {enabled = true, run_via_dap = true}
+    --flutter_path = "/Users/hiroki.yamauchi/fvm/versions/3.10.5",
+    fvm = true,
 }
-
-require("telescope").load_extension("flutter")

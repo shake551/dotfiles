@@ -28,7 +28,6 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-    use 'onsails/lspkind.nvim'
 
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
@@ -37,7 +36,7 @@ return require('packer').startup(function(use)
 
     use 'akinsho/toggleterm.nvim'
 
-    -- use {"fatih/vim-go", ft = {"go"}}
+    use {"fatih/vim-go", ft = {"go"}}
 
     use 'lewis6991/gitsigns.nvim'
 
@@ -48,7 +47,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+        tag = '0.1.4',
         requires = {{'nvim-lua/plenary.nvim'}, {'BurntSushi/ripgrep'}}
     }
 
@@ -56,13 +55,12 @@ return require('packer').startup(function(use)
 
     use {"jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim"}
 
-    use "lukas-reineke/indent-blankline.nvim"
+    use {"lukas-reineke/indent-blankline.nvim"}
 
     use {
         'akinsho/flutter-tools.nvim',
         requires = {
-            'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim',
-            'mfussenegger/nvim-dap'
+            'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' -- optional for vim.ui.select
         }
     }
 
@@ -70,8 +68,7 @@ return require('packer').startup(function(use)
         'pwntester/octo.nvim',
         requires = {
             'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim',
-            'kyazdani42/nvim-web-devicons', 'rcarriga/nvim-dap-ui'
+            'kyazdani42/nvim-web-devicons'
         }
     }
-    use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
 end)
