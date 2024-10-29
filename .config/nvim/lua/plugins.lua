@@ -1,5 +1,4 @@
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
     use "wbthomason/packer.nvim"
     use "neovim/nvim-lspconfig"
@@ -12,7 +11,7 @@ return require('packer').startup(function(use)
         requires = {
             'kyazdani42/nvim-web-devicons' -- optional, for file icons
         },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        tag = 'latest'
     }
 
     -- auto close ex. {}
@@ -73,4 +72,8 @@ return require('packer').startup(function(use)
     }
 
     use 'github/copilot.vim'
+
+    use 'linrongbin16/gitlinker.nvim'
+
+    use 'CopilotC-Nvim/CopilotChat.nvim'
 end)

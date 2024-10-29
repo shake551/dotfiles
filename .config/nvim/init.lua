@@ -12,6 +12,8 @@ require "formatter"
 require "indent"
 require "flutter"
 require "octo_config"
+require "git_link"
+require "copilot"
 
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
