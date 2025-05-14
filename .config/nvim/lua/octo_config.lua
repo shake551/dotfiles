@@ -1,9 +1,9 @@
 require"octo".setup({
-    use_local_fs = false, -- use local files on right side of reviews
+    use_local_fs = true, -- use local files on right side of reviews
+    -- hoge
     default_remote = {"upstream", "origin"}, -- order to try remotes
     ssh_aliases = {}, -- SSH aliases. e.g. `ssh_aliases = {["github.com-work"] = "github.com"}`
     reaction_viewer_hint_icon = "", -- marker for user reactions
-    user_icon = " ", -- user icon
     timeline_marker = "", -- timeline marker
     timeline_indent = "2", -- timeline indentation
     right_bubble_delimiter = "", -- bubble delimiter
