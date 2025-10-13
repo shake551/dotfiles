@@ -12,6 +12,7 @@ return {
     require'lspconfig'.gopls.setup {}
     require'lspconfig'.terraformls.setup {}
     require'lspconfig'.pylsp.setup {}
+    require'lspconfig'.ts_ls.setup {}
     -- Mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
     local opts = {noremap = true, silent = true}

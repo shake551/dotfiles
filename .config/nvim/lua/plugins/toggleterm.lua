@@ -12,5 +12,16 @@ return {
 
     vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>",
       {noremap = true, silent = true})
+
+    local claudeCode = Terminal:new({
+      cmd = "claude",
+      direction = "float",
+      hidden = true
+    })
+
+    function _claudeCode_toggle() claudeCode:toggle() end
+
+    vim.api.nvim_set_keymap("n", "<leader>cc", "<cmd>lua _claudeCode_toggle()<CR>",
+      {noremap = true, silent = true})
   end
 }

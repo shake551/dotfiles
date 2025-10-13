@@ -17,6 +17,36 @@ function _lazygit_toggle() lazygit:toggle() end
 vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua _lazygit_toggle()<CR>",
                         {noremap = true, silent = true})
 
+local claudeCode = Terminal:new({
+    cmd = "claude",
+    direction = "vertical",
+    hidden = true,
+    -- windwサイズを画面の半分に設定
+    on_open = function(term)
+	vim.cmd("vertical resize " .. math.floor(vim.o.columns / 2))
+    end
+})
+
+function _claudeCode_toggle() claudeCode:toggle() end
+
+vim.api.nvim_set_keymap("n", "<leader>cc", "<cmd>lua _claudeCode_toggle()<CR>",
+                        {noremap = true, silent = true})
+
+local geminiCli = Terminal:new({
+    cmd = "gemini",
+    direction = "vertical",
+    hidden = true,
+    -- windwサイズを画面の半分に設定
+    on_open = function(term)
+	vim.cmd("vertical resize " .. math.floor(vim.o.columns / 2))
+    end
+})
+
+function _geminiCli_toggle() geminiCli:toggle() end
+
+vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>lua _geminiCli_toggle()<CR>",
+                        {noremap = true, silent = true})
+
 -- dap
 vim.api.nvim_set_keymap('n', '<F5>', ':DapContinue<CR>', { silent = true })
 vim.api.nvim_set_keymap('n', '<F10>', ':DapStepOver<CR>', { silent = true })
